@@ -24,6 +24,6 @@ spec:
     spec:
       containers:
       - name: ci-cd-master
-        image: patricktrp/ci-cd-master
+        image: patricktrp/ci-cd-master:2
         ports:
         - containerPort: 8080
