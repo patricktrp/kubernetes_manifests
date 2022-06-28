@@ -3,11 +3,12 @@ kind: Service
 metadata:
   name: myapp
 spec:
+  type: LoadBalancer
   selector:
     app: myapp
   ports:
-  - port: 8080
-    targetPort: 8080
+    - port: 8080
+      targetPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -23,7 +24,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: ci-cd-master
-        image: patricktrp/ci-cd-master:17
-        ports:
-        - containerPort: 8080
+        - name: ci-cd-master
+          image: patricktrp/ci-cd-master:17
+          ports:
+            - containerPort: 8080
